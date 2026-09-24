@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { formatTimestamp } from "@/lib/format";
-import { absShareListenUrl, itemListenUrl, libbySearchUrl } from "@/lib/links";
+import { absShareListenUrl, itemListenUrl } from "@/lib/links";
 import { prisma } from "@/lib/prisma";
 
 export async function generateMetadata({
@@ -81,12 +81,6 @@ export default async function PublicSharePage({
             Listen without an account
           </a>
         ) : null}
-        <a
-          href={libbySearchUrl({ title: clip.bookTitle, author: clip.author, isbn: clip.isbn })}
-          className="rounded-lg px-4 py-3 text-center text-sm text-muted hover:text-ink"
-        >
-          Don’t have access? Find it on Libby
-        </a>
       </div>
     </main>
   );

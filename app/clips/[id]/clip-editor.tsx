@@ -9,7 +9,7 @@ import {
   unpublishClip,
 } from "@/app/actions";
 import { formatTimestamp } from "@/lib/format";
-import { absShareListenUrl, itemListenUrl, libbySearchUrl } from "@/lib/links";
+import { absShareListenUrl, itemListenUrl } from "@/lib/links";
 
 type Clip = {
   id: string;
@@ -354,14 +354,6 @@ export function ClipEditor({
             </form>
           </>
         ) : null}
-        <a
-          href={libbySearchUrl({ title: clip.bookTitle, author: clip.author, isbn: clip.isbn })}
-          target="_blank"
-          rel="noreferrer"
-          className="rounded-lg px-4 py-2 text-sm text-muted hover:text-ink"
-        >
-          Find on Libby
-        </a>
       </section>
     </div>
   );

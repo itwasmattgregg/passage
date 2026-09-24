@@ -1,0 +1,26 @@
+import type { Metadata } from "next";
+import { Fraunces, Source_Sans_3 } from "next/font/google";
+import "./globals.css";
+
+const sans = Source_Sans_3({
+  variable: "--font-sans",
+  subsets: ["latin"],
+});
+
+const serif = Fraunces({
+  variable: "--font-serif",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Passage",
+  description: "Share audiobook bookmarks into your Audiobookshelf library.",
+};
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return (
+    <html lang="en" className={`${sans.variable} ${serif.variable} h-full antialiased`}>
+      <body className="min-h-full">{children}</body>
+    </html>
+  );
+}
